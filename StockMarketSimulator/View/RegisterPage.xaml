@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:te="clr-namespace:StockMarketSimulator.Helpers" 
+             xmlns:image="clr-namespace:StockMarketSimulator.Helpers"
+             xmlns:vm="clr-namespace:StockMarketSimulator.ViewModel"
+             xmlns:behavior="clr-namespace:StockMarketSimulator.Helpers"
+             x:Class="StockMarketSimulator.View.RegisterPage"
+             Title="{te:Translate Register}">
+    
+<!--This page contains a frame with 3 stacks: one for the whole content, one for the form and one for the all rights reserved text-->
+    <ContentPage.Resources>
+        <vm:RegisterViewModel x:Key="vm"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Frame HasShadow="True" Margin="20,64">
+            <!--Main-->
+            <StackLayout>
+                <Label Text="{te:Translate JoinUs}" FontSize="Title"  HorizontalOptions="CenterAndExpand"/>
+                <!--Form-->
+                <StackLayout VerticalOptions="CenterAndExpand" BindingContext="{StaticResource vm}">
+                    <!--Name-->
+                    <Entry Placeholder="{te:Translate Name}" Text="{Binding Name, Mode=TwoWay}"/>
+                    <StackLayout>
+                        <!--Email-->
+                        <Entry Placeholder="{te:Translate Email}" Text="{Binding Email, Mode=TwoWay}"/>
+                        <Label IsVisible="false"/>
+                        <StackLayout.Behaviors>
+                            <behavior:EmailEntryBehavior/>
+                        </StackLayout.Behaviors>
+                    </StackLayout>
+                    <!--Password-->
+                    <StackLayout>
+                        <Entry Placeholder="{te:Translate Password}" IsPassword="True" Text="{Binding Password, Mode=TwoWay}"/>
+                        <Label IsVisible="false"/>
+                        <StackLayout.Behaviors>
+                            <behavior:PasswordEntryBehavior/>
+                        </StackLayout.Behaviors>
+                    </StackLayout>
+                    <!--Confirmed Password-->
+                    <Entry Placeholder="{te:Translate ConfirmPassword}" IsPassword="True" Text="{Binding ConfirmedPassword, Mode=TwoWay}"/>
+                    <!--Register Button-->
+                    <Button Margin="0,16" Text="{te:Translate Register}" Command="{Binding RegisterCommand}" CommandParameter="{Binding CanRegister}"/>
+                </StackLayout>
+                <!--AllRightsReserved-->
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Image Source="{image:Image StockMarketSimulator.Images.copyright.png}" WidthRequest="25" HeightRequest="25" HorizontalOptions="Center"/>
+                    <Label Margin="-10,1,0,0" FontSize="Subtitle" Text="{te:Translate AllRightsReserved}"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

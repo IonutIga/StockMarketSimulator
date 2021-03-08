@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>212075596176-nbpjl9kere76jse9co8lccejeilcr98j.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.212075596176-nbpjl9kere76jse9co8lccejeilcr98j</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDh5zBGTyX9X7Ic-ICg7j78rXn0cC08RpI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>212075596176</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.companyname.StockMarketSimulator</string>
+	<key>PROJECT_ID</key>
+	<string>stockmarketsimulator-17d7d</string>
+	<key>STORAGE_BUCKET</key>
+	<string>stockmarketsimulator-17d7d.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:212075596176:ios:1cb5466a8f06c6dd058b15</string>
+</dict>
+</plist>

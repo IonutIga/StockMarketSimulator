@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:video="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
+              xmlns:te="clr-namespace:StockMarketSimulator.Helpers" 
+             xmlns:image="clr-namespace:StockMarketSimulator.Helpers"
+             xmlns:vm="clr-namespace:StockMarketSimulator.ViewModel"
+             Title="{te:Translate Help}"
+             x:Class="StockMarketSimulator.View.HelpPage">
+
+    <!--This page contains the help for understanding how the app is working-->
+
+    <ContentPage.Resources>
+        
+        <Style TargetType="Label" x:Key="labelHelpLangStyle">
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+
+        <vm:HelpViewModel x:Key="vm"/>
+    </ContentPage.Resources>
+    
+    <ContentPage.BindingContext>
+        <StaticResource Key="vm"/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <!--Main-->
+        <ScrollView>
+            <Grid Margin="16">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <!--Loading Screen when video is loading-->
+                <ActivityIndicator  Grid.Row="0" Grid.Column="0" IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}"/>
+                <!--Text-->
+                <Label Style="{StaticResource labelHelpLangStyle}" Grid.Row="1" Grid.Column="0" Text="{te:Translate HelpText}" HorizontalOptions="CenterAndExpand"/>
+                <!--Video-->
+                <video:VideoView Grid.Row="2" Grid.Column="0" ShowControls="True" AutoPlay="False"/>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en" target-language="ro" original="STOCKMARKETSIMULATOR/RESOURCES/LANGUAGE.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.6916.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="STOCKMARKETSIMULATOR/RESOURCES/LANGUAGE.RESX" datatype="resx">
+        <trans-unit id="Alert" translate="yes" xml:space="preserve">
+          <source>Alert</source>
+          <target state="translated" state-qualifier="tm-suggestion">Avertizare</target>
+        </trans-unit>
+        <trans-unit id="AllRightsReserved" translate="yes" xml:space="preserve">
+          <source>All Rights Reserved</source>
+          <target state="translated" state-qualifier="tm-suggestion">Toate drepturile rezervate</target>
+        </trans-unit>
+        <trans-unit id="BoughtFor" translate="yes" xml:space="preserve">
+          <source>Bought for:</source>
+          <target state="translated">Cumpărat la:</target>
+        </trans-unit>
+        <trans-unit id="Buy" translate="yes" xml:space="preserve">
+          <source>Buy</source>
+          <target state="translated">Cumpără</target>
+        </trans-unit>
+        <trans-unit id="CompanyDescription" translate="yes" xml:space="preserve">
+          <source>Company Description</source>
+          <target state="translated">Descrierea Companiei</target>
+        </trans-unit>
+        <trans-unit id="ConfirmPassword" translate="yes" xml:space="preserve">
+          <source>Confirm Password</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Confirmare parolă</target>
+        </trans-unit>
+        <trans-unit id="CurrentPrice" translate="yes" xml:space="preserve">
+          <source>Current:</source>
+          <target state="needs-review-translation">Curent:</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="Email" translate="yes" xml:space="preserve">
+          <source>Email</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">E-mail</target>
+        </trans-unit>
+        <trans-unit id="Help" translate="yes" xml:space="preserve">
+          <source>Help</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ajutor</target>
+        </trans-unit>
+        <trans-unit id="InvalidEmail" translate="yes" xml:space="preserve">
+          <source>Please insert a valid email (ex. john@domain.com)</source>
+          <target state="translated">Vă rugăm introduceți un email valid (ex. ion@domeniu.ro)</target>
+        </trans-unit>
+        <trans-unit id="InvalidPassword" translate="yes" xml:space="preserve">
+          <source>Your password is invalid. It must be minimum 8 characters length, containing an upper letter and a number.</source>
+          <target state="translated">Parola este invalidă. Trebuie să aibă minim 8 caractere lungime și să conțină o litera mare și un număr.</target>
+        </trans-unit>
+        <trans-unit id="JoinUs" translate="yes" xml:space="preserve">
+          <source>Join Us!</source>
+          <target state="translated">Alătură-te nouă!</target>
+        </trans-unit>
+        <trans-unit id="LetsTrade" translate="yes" xml:space="preserve">
+          <source>Let's Trade!</source>
+          <target state="translated">Hai să tranzacționăm!</target>
+        </trans-unit>
+        <trans-unit id="Login" translate="yes" xml:space="preserve">
+          <source>Login</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Conectare</target>
+        </trans-unit>
+        <trans-unit id="Logout" translate="yes" xml:space="preserve">
+          <source>Logout</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Deconectare</target>
+        </trans-unit>
+        <trans-unit id="Market" translate="yes" xml:space="preserve">
+          <source>Market</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Piață</target>
+        </trans-unit>
+        <trans-unit id="Name" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <target state="translated">Nume</target>
+        </trans-unit>
+        <trans-unit id="NoStocksFound" translate="yes" xml:space="preserve">
+          <source>No stocks found!</source>
+          <target state="translated">Nicio acțiune găsită!</target>
+        </trans-unit>
+        <trans-unit id="Password" translate="yes" xml:space="preserve">
+          <source>Password</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Parolă</target>
+        </trans-unit>
+        <trans-unit id="PreviousPrice" translate="yes" xml:space="preserve">
+          <source>Previous:</source>
+          <target state="needs-review-translation">Anterior:</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+        </trans-unit>
+        <trans-unit id="PriceDiff" translate="yes" xml:space="preserve">
+          <source>Price Diff:</source>
+          <target state="translated">Dif Preț:</target>
+        </trans-unit>
+        <trans-unit id="PriceDifference" translate="yes" xml:space="preserve">
+          <source>Price Difference:</source>
+          <target state="translated">Diferență Preț:</target>
+        </trans-unit>
+        <trans-unit id="Profile" translate="yes" xml:space="preserve">
+          <source>Profile</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Profil</target>
+        </trans-unit>
+        <trans-unit id="Quantity" translate="yes" xml:space="preserve">
+          <source>Quantity:</source>
+          <target state="translated">Cantitate:</target>
+        </trans-unit>
+        <trans-unit id="QuantityCheckMessage" translate="yes" xml:space="preserve">
+          <source>Quantity has to be greater than 0!</source>
+          <target state="translated">Cantitatea trebuie să fie mai mare de 0!</target>
+        </trans-unit>
+        <trans-unit id="Register" translate="yes" xml:space="preserve">
+          <source>Register</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Înregistrare</target>
+        </trans-unit>
+        <trans-unit id="Sell" translate="yes" xml:space="preserve">
+          <source>Sell</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Vânzare</target>
+        </trans-unit>
+        <trans-unit id="Statistics" translate="yes" xml:space="preserve">
+          <source>Statistics</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Statistici</target>
+        </trans-unit>
+        <trans-unit id="StockMarketSimulator" translate="yes" xml:space="preserve">
+          <source>Stock Market Simulator</source>
+          <target state="new">Stock Market Simulator</target>
+        </trans-unit>
+        <trans-unit id="Stocks" translate="yes" xml:space="preserve">
+          <source>Stocks</source>
+          <target state="translated">Acțiuni</target>
+        </trans-unit>
+        <trans-unit id="Owned" translate="yes" xml:space="preserve">
+          <source>Owned</source>
+          <target state="translated">Deținute</target>
+        </trans-unit>
+        <trans-unit id="Sign" translate="yes" xml:space="preserve">
+          <source>€</source>
+          <target state="translated">RON</target>
+        </trans-unit>
+        <trans-unit id="BudgetCheckMessage" translate="yes" xml:space="preserve">
+          <source>Not enough money to complete the transaction!</source>
+          <target state="translated">Nu sunt destui bani pentru a finaliza tranzacția!</target>
+        </trans-unit>
+        <trans-unit id="SellCheckMessage" translate="yes" xml:space="preserve">
+          <source>You cannot sell nothing or more stocks than you own!</source>
+          <target state="translated">Nu puteți vinde nimic sau mai multe acțiuni de cât detineți!</target>
+        </trans-unit>
+        <trans-unit id="HelpText" translate="yes" xml:space="preserve">
+          <source>Video tutorial for English language</source>
+          <target state="translated">Tutorial video pentru limba română</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

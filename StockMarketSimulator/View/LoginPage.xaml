@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:te="clr-namespace:StockMarketSimulator.Helpers" 
+             xmlns:image="clr-namespace:StockMarketSimulator.Helpers"
+             xmlns:vm="clr-namespace:StockMarketSimulator.ViewModel"
+             xmlns:behavior="clr-namespace:StockMarketSimulator.Helpers"
+             x:Class="StockMarketSimulator.View.LoginPage"
+             Title="{te:Translate Login}">
+
+    <!--This page contains a frame with 3 stacks: one for the whole content, one for the form and one for the all rights reserved text-->
+    <ContentPage.Resources>
+        <vm:LoginViewModel x:Key="vm"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Frame HasShadow="True" Margin="20,64" >
+            <!--Main-->
+            <StackLayout>
+                <Label Text="{te:Translate LetsTrade}" FontSize="Title"  HorizontalOptions="CenterAndExpand"/>
+                <!--Form-->
+                <StackLayout VerticalOptions="CenterAndExpand" BindingContext="{StaticResource vm}">
+                    <!--Email-->
+                    <StackLayout>
+                        <Entry Placeholder="{te:Translate Email}" Text="{Binding Email, Mode=TwoWay}"/>
+                        <Label IsVisible="false"/>
+                        <StackLayout.Behaviors>
+                            <behavior:EmailEntryBehavior/>
+                        </StackLayout.Behaviors>
+                    </StackLayout>
+                    <!--Password-->
+                    <Entry Placeholder="{te:Translate Password}" IsPassword="True" Text="{Binding Password, Mode=TwoWay}"/>
+                    <!--Login Button-->
+                    <Button Margin="0,16" Text="{te:Translate Login}" Command="{Binding LoginCommand}" CommandParameter="{Binding CanLogin}"/>
+                </StackLayout>
+                <!--AllRightsReserved-->
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Image Source="{image:Image StockMarketSimulator.Images.copyright.png}" WidthRequest="25" HeightRequest="25" HorizontalOptions="Center"/>
+                    <Label Margin="-10,1,0,0" FontSize="Subtitle" Text="{te:Translate AllRightsReserved}"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

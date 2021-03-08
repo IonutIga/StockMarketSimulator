@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "212075596176",
+    "project_id": "stockmarketsimulator-17d7d",
+    "storage_bucket": "stockmarketsimulator-17d7d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:212075596176:android:22c1da082685ddcd058b15",
+        "android_client_info": {
+          "package_name": "com.companyname.stockmarketsimulator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "212075596176-68rvpkjb0v323br7vsbbgpb18nsq6v4s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjLyUGhB8fzfqPQU8ouixMXN-iLSl7p04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "212075596176-68rvpkjb0v323br7vsbbgpb18nsq6v4s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

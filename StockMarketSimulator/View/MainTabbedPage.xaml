@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="StockMarketSimulator.View.MainTabbedPage"
+            xmlns:te="clr-namespace:StockMarketSimulator.Helpers"
+            xmlns:vm="clr-namespace:StockMarketSimulator.ViewModel"
+            Title="{te:Translate StockMarketSimulator}"
+             android:TabbedPage.ToolbarPlacement="Bottom">
+
+
+    <TabbedPage.BindingContext>
+        <StaticResource Key="vm"/>
+    </TabbedPage.BindingContext>
+    <!--Budget-->
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem  Text="{Binding Budget, Mode=TwoWay, StringFormat='Cash: {0}'}"/>
+        <ToolbarItem  Text="{te:Translate Sign}" Command="{Binding SettingsCommand}" />
+    </TabbedPage.ToolbarItems>
+    <!--Used for placing the toolbar at the bottom, on Android-->
+
+    <!--This page holds the menu for the user, with 3 pages as following: MyHome(owned stocks), Home(market) and Profile-->
+
+</TabbedPage>

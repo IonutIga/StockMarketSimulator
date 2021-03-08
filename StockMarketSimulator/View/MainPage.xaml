@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:te="clr-namespace:StockMarketSimulator.Helpers" 
+             xmlns:image="clr-namespace:StockMarketSimulator.Helpers"
+             xmlns:vm="clr-namespace:StockMarketSimulator.ViewModel"
+             x:Class="StockMarketSimulator.View.MainPage"
+             Title="Trading Simulator">
+
+    <!--This page contains a main stack layout for the buttons and AllRightsReserved stack-->
+    <ContentPage.Resources>
+        <vm:MainViewModel x:Key="vm"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <!--Main-->
+        <StackLayout Padding="24" BindingContext="{StaticResource vm}">
+            <Label Text="{te:Translate StockMarketSimulator}" TextColor="#e4443a" FontSize="72" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+            <Button Text="{te:Translate Register}" Command="{Binding RegisterCommand}"/>
+            <Button Text="{te:Translate Login}" Command="{Binding LoginCommand}"/>
+            <Button Text="{te:Translate Help}" Command="{Binding HelpCommand}"/>
+            <!--AllRightsReserved-->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,10">
+                <Image Source="{image:Image StockMarketSimulator.Images.copyright.png}" WidthRequest="25" HeightRequest="25" HorizontalOptions="Center"/>
+                <Label Margin="-10,1,0,0" FontSize="Subtitle" Text="{te:Translate AllRightsReserved}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

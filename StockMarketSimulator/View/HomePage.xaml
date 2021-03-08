@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:te="clr-namespace:StockMarketSimulator.Helpers" 
+             xmlns:image="clr-namespace:StockMarketSimulator.Helpers"
+             xmlns:vm="clr-namespace:StockMarketSimulator.ViewModel"
+             x:Class="StockMarketSimulator.View.HomePage"
+             Title="{te:Translate Market}"
+             IconImageSource="{image:Image StockMarketSimulator.Images.stockmarket.png}">
+
+    <!--This page contains a list view with all the stocks available on the market-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:HomeViewModel x:Key="vm"/>
+            <Style TargetType="Label" x:Key="labelStockStyle">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <StaticResource Key="vm"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <!--Main-->
+        <StackLayout>
+            <!--Loading Screen-->
+            <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}"/>
+            <!--Label Stocks Not Found-->
+            <Label Text="{te:Translate NoStocksFound}" HorizontalOptions="CenterAndExpand" Margin="16" FontSize="20" TextColor="Gray" IsVisible="{Binding ShowNoStocks}"/>
+            <ListView x:Name="list" ItemsSource="{Binding StockList}" SelectionMode="None" HasUnevenRows="True" ItemTapped="Details">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <!--Main-->
+                            <StackLayout Orientation="Vertical">
+                                <!--Description-->
+                                <StackLayout Orientation="Horizontal" Padding="16,16,8,16">
+                                    <Image Source="{Binding ImageUri}" WidthRequest="40" HeightRequest="40"/>
+                                    <!--Names-->
+                                    <StackLayout Orientation="Vertical"  VerticalOptions="Start" WidthRequest="100">
+                                        <Label FontSize="20" FontAttributes="Bold"  Text="{Binding ShortName}" />
+                                        <Label FontSize="14" Text="{Binding LongName}" MaxLines="1" LineBreakMode="TailTruncation"/>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions="EndAndExpand">
+                                        <!--New Price-->
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Style="{StaticResource labelStockStyle}"  MaxLines="1" LineBreakMode="TailTruncation" Text="{te:Translate CurrentPrice}" />
+                                            <Label FontSize="16" Text="{Binding NowPrice}" VerticalOptions="EndAndExpand" MaxLines="1" LineBreakMode="TailTruncation"/>
+                                            <Label FontSize="16" WidthRequest="40" Text="{te:Translate Sign}" VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand"/>
+                                        </StackLayout>
+                                        <!--Old Price-->
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Style="{StaticResource labelStockStyle}"  MaxLines="1" LineBreakMode="TailTruncation" Text="{te:Translate PreviousPrice}"/>
+                                            <Label FontSize="16" Text="{Binding OldPrice}" VerticalOptions="EndAndExpand" MaxLines="1" LineBreakMode="TailTruncation"/>
+                                            <Label FontSize="16" WidthRequest="40" Text="{te:Translate Sign}" VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                                <!--Price Difference-->
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{te:Translate PriceDifference}" FontSize="18" TextColor="{Binding StatisticColor}" HorizontalOptions="EndAndExpand"/>
+                                    <Label Text="{Binding Statistic}" FontSize="18" TextColor="{Binding StatisticColor}" HorizontalOptions="Start"/>
+                                    <Label FontSize="18" Text="{te:Translate Sign}" VerticalOptions="EndAndExpand" TextColor="{Binding StatisticColor}" HorizontalOptions="StartAndExpand"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

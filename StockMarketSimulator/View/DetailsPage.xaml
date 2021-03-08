@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:te="clr-namespace:StockMarketSimulator.Helpers" 
+             xmlns:image="clr-namespace:StockMarketSimulator.Helpers"
+             xmlns:vm="clr-namespace:StockMarketSimulator.ViewModel"
+             Title="{te:Translate Buy}"
+             x:Class="StockMarketSimulator.View.DetailsPage">
+
+    <!--This page contains the details of a specific stock, as well as the Buy button-->
+
+    <ContentPage.Resources>
+        <Style TargetType="Label" x:Key="labelStockStyle">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+        <vm:DetailsViewModel x:Key="vm"/>
+
+    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <StaticResource Key="vm"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <!--Main-->
+        <StackLayout>
+            <!--Loading Screen when stock is bought-->
+            <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}"/>
+            <!--Content-->
+            <StackLayout Orientation="Vertical" Padding="16" BindingContext="{Binding Source={StaticResource vm },Path=StockTapped}">
+                <!--Image and Names-->
+                <StackLayout Orientation="Horizontal">
+                    <!--Image-->
+                    <Image Source="{Binding ImageUri}" WidthRequest="45" HeightRequest="45"/>
+                    <!--Names-->
+                    <StackLayout Orientation="Vertical">
+                        <Label FontSize="26" FontAttributes="Bold"  Text="{Binding ShortName}"/>
+                        <Label FontSize="20" Text="{Binding LongName}"/>
+                    </StackLayout>
+                </StackLayout>
+                <!--Prices-->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <!--New Price-->
+                    <Frame  Grid.Row="0" Grid.Column="0" Padding="8,8,8,16">
+                        <StackLayout Orientation="Vertical" >
+                            <Label Style="{StaticResource labelStockStyle}" HorizontalOptions="CenterAndExpand"  Text="{te:Translate CurrentPrice}"/>
+                            <Label FontSize="18" Text="{Binding NowPrice}" HorizontalOptions="CenterAndExpand" MaxLines="1" LineBreakMode="TailTruncation"/>
+                            <Label FontSize="18" Text="{te:Translate Sign}" HorizontalOptions="CenterAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                    <!--Old Price-->
+                    <Frame Grid.Row="0" Grid.Column="1" Padding="8,8,8,16">
+                        <StackLayout  Orientation="Vertical">
+                            <Label Style="{StaticResource labelStockStyle}" HorizontalOptions="CenterAndExpand" Text="{te:Translate PreviousPrice}"/>
+                            <Label FontSize="18" Text="{Binding OldPrice}"  HorizontalOptions="CenterAndExpand" MaxLines="1" LineBreakMode="TailTruncation"/>
+                            <Label FontSize="18" Text="{te:Translate Sign}" HorizontalOptions="CenterAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                    <!--Price Difference-->
+                    <Frame Grid.Row="0" Grid.Column="2" Padding="8,8,8,16" >
+                        <StackLayout Orientation="Vertical" >
+                            <Label Text="{te:Translate PriceDiff}" HorizontalOptions="CenterAndExpand" FontSize="18" TextColor="{Binding StatisticColor}"/>
+                            <Label Text="{Binding Statistic}" FontSize="18" HorizontalOptions="CenterAndExpand" TextColor="{Binding StatisticColor}" MaxLines="1" LineBreakMode="TailTruncation" />
+                            <Label FontSize="18" Text="{te:Translate Sign}" TextColor="{Binding StatisticColor}" HorizontalOptions="CenterAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+
+                <!--Quantity-->
+                <Grid Margin="16">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Slider Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Minimum="0" Maximum="{Binding Source={StaticResource vm}, Path=Maximum, Mode=TwoWay}" MinimumTrackColor="Black" MaximumTrackColor="Gray" Value="{Binding Source={StaticResource vm}, Path=Quantity, Mode=TwoWay}"/>
+                    <Label FontSize="20" Grid.Row="0" Grid.Column="2" Text="{Binding Source={StaticResource vm}, Path=Quantity, Mode=TwoWay}"/>
+                    <Label FontSize="20" Grid.Row="0" Grid.Column="2" Text="{te:Translate Stocks}" HorizontalOptions="EndAndExpand"/>
+
+                </Grid>
+                <!--Buy Button-->
+                <Button Text="{te:Translate Buy}" Command="{Binding Source={StaticResource vm}, Path=BuyCommand}"/>
+                <Label Text="{te:Translate CompanyDescription}" Padding="0,8,0,24" FontSize="24"/>
+                <!--Description-->
+                <ScrollView>
+                    <Label Text="{Binding CompanyDescription}" FontSize="18" TextColor="Gray"/>
+                </ScrollView>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

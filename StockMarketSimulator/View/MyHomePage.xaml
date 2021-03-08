@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:te="clr-namespace:StockMarketSimulator.Helpers" 
+             xmlns:image="clr-namespace:StockMarketSimulator.Helpers"
+             xmlns:vm="clr-namespace:StockMarketSimulator.ViewModel"
+             x:Class="StockMarketSimulator.View.MyHomePage"
+             Title="{te:Translate Stocks}"
+             IconImageSource="{image:Image StockMarketSimulator.Images.moneybag.png}">
+
+    <!--This page contains a list view with all the stocks bought by a user-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:MyHomeViewModel x:Key="vm"/>
+
+            <!--Style for the Buy and Quantity labels-->
+            <Style TargetType="Label" x:Key="labelStockStyle">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <StaticResource Key="vm"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <!--Main-->
+        <StackLayout>
+            <!--Loading Screen and Sell time-->
+            <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}"/>
+            <!--Label No Stocks Found-->
+            <Label Text="{te:Translate NoStocksFound}" HorizontalOptions="CenterAndExpand" Margin="16" FontSize="20" TextColor="Gray" IsVisible="{Binding ShowNoStocks}"/>
+            <ListView ItemsSource="{Binding MyStockList}" HasUnevenRows="True" SelectionMode="None" ItemTapped="Tapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <!--Main-->
+                            <StackLayout Orientation="Vertical">
+                                <!--Description-->
+                                <StackLayout Orientation="Horizontal" Margin="16,16,8,16">
+                                    <Image Source="{Binding ImageUri}" WidthRequest="40" HeightRequest="40"/>
+                                    <!--Names-->
+                                    <StackLayout Orientation="Vertical" VerticalOptions="Start" WidthRequest="100">
+                                        <Label FontSize="20" FontAttributes="Bold"  Text="{Binding ShortName}"/>
+                                        <Label FontSize="14" Text="{Binding LongName}" MaxLines="1" LineBreakMode="TailTruncation"/>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions="EndAndExpand">
+                                        <!--Buy Price-->
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Style="{StaticResource labelStockStyle}" Text="{te:Translate BoughtFor}" MaxLines="1" LineBreakMode="TailTruncation"/>
+                                            <Label FontSize="16" Text="{Binding BuyPrice}" VerticalOptions="EndAndExpand" MaxLines="1" LineBreakMode="TailTruncation"/>
+                                            <Label WidthRequest="40" FontSize="16" Text="{te:Translate Sign}" VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand"/>
+                                        </StackLayout>
+                                        <!--Quantity-->
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Style="{StaticResource labelStockStyle}" Text="{te:Translate Quantity}" MaxLines="1" LineBreakMode="TailTruncation"/>
+                                            <Label FontSize="16" Text="{Binding Quantity}" VerticalOptions="EndAndExpand"/>
+                                        </StackLayout>
+
+                                    </StackLayout>
+                                </StackLayout>
+                                <!--Current Price-->
+                                <StackLayout IsVisible="{Binding IsVisible, Mode=TwoWay}" Orientation="Horizontal" >
+                                    <Label HorizontalOptions="EndAndExpand" Style="{StaticResource labelStockStyle}" Text="{te:Translate CurrentPrice}"/>
+                                    <Label HorizontalOptions="Start" Style="{StaticResource labelStockStyle}" Text="{Binding Source={StaticResource vm}, Path=NowPrice}"/>
+                                    <Label Style="{StaticResource labelStockStyle}" Text="{te:Translate Sign}" HorizontalOptions="StartAndExpand"/>
+                                </StackLayout>
+                                <!--Quantity Entry-->
+                                <Entry Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" IsVisible="{Binding IsVisible, Mode=TwoWay}" Text="{Binding Source={StaticResource vm}, Path=Quantity, Mode=TwoWay}" Placeholder="{te:Translate Quantity}" Margin="16,0" Keyboard="Numeric"/>
+                                <!--Sell Button-->
+                                <Button Margin="16" IsVisible="{Binding IsVisible, Mode=TwoWay}" Text="{te:Translate Sell}" Command="{Binding Source={StaticResource vm}, Path=SellCommand}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

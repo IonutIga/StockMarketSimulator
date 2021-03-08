@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:te="clr-namespace:StockMarketSimulator.Helpers" 
+             xmlns:image="clr-namespace:StockMarketSimulator.Helpers"
+             xmlns:vm="clr-namespace:StockMarketSimulator.ViewModel"
+             xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+             x:Class="StockMarketSimulator.View.ProfilePage"
+             Title="{te:Translate Profile}"
+             IconImageSource="{image:Image StockMarketSimulator.Images.profile.png}">
+    
+    <!--This page contains details about user's profile, also logout posibility-->
+
+    <ContentPage.Resources>
+        <vm:ProfileViewModel x:Key="vm"/>
+        <Style TargetType="Label" x:Key="ProfileLabel">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="TextColor" Value="Black"/>
+        </Style>
+        <Style TargetType="Label" x:Key="TitleLabel">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <StaticResource Key="vm"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <!--Main-->
+        <ScrollView>
+            <StackLayout Margin="16">
+                <!--User Profile Details-->
+                <Frame>
+                    
+                    <StackLayout>
+                        <Label Style="{StaticResource TitleLabel}" Text="{te:Translate Profile}"/>
+                         <!--Name-->
+                        <StackLayout Orientation="Horizontal">
+                            <Label Style="{StaticResource ProfileLabel}" Text="{te:Translate Name}"/>
+                            <Label Style="{StaticResource ProfileLabel}" Text="{Binding Name,StringFormat=': {0}'}"/>
+                        </StackLayout>
+                        <!--Email-->
+                        <StackLayout Orientation="Horizontal">
+                            <Label Style="{StaticResource ProfileLabel}" Text="{te:Translate Email}"/>
+                            <Label Style="{StaticResource ProfileLabel}" Text="{Binding Email,StringFormat=': {0}'}"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <!--Statistics-->
+                <Label Style="{StaticResource TitleLabel}" Text="{te:Translate Statistics}"/>
+                <!--Chart-->
+                <microcharts:ChartView HeightRequest="300"  x:Name="chartView" Chart="{Binding StocksOwnedChart}"/>
+                <!--Logout Button-->
+                <Button Margin="0,8,0,0" Text="{te:Translate Logout}" Command="{Binding LogoutCommand}"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+  <style name="MainTheme" parent="MainTheme.Base">
+	  <!-- colorPrimary is used for the default action bar background -->
+	  <item name="colorPrimary">#c4352d</item>
+	  <!-- colorPrimaryDark is used for the status bar -->
+	  <item name="colorPrimaryDark">#e4443a</item>
+	  <!-- colorAccent is used as the default value for colorControlActivated
+         which is used to tint widgets -->
+	  <item name="colorAccent">#2dbdc4</item>
+  </style>
+</resources>

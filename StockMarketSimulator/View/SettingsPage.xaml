@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StockMarketSimulator.View.SettingsPage"
+             xmlns:te="clr-namespace:StockMarketSimulator.Helpers"
+             xmlns:vm="clr-namespace:StockMarketSimulator.ViewModel"
+             Title="Setări">
+
+    <!-- Page used to display settings for EUR-RON rate; only for Ro users-->
+    <ContentPage.Resources>
+        <vm:SettingsViewModel x:Key="vm"/>
+    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <StaticResource Key="vm"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <!--Main-->
+        <StackLayout Margin="16">
+            <!--Loading Screen when settings are set-->
+            <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}"/>
+            <!--Rate-->
+            <Slider Maximum="6" Minimum="1" MinimumTrackColor="Black" MaximumTrackColor="Gray" Value="{Binding Rate}"/>
+            <Label FontSize="18" Text="{Binding Rate,StringFormat='Rata actuală de conversie EUR-RON: {0}'}"/>
+            <!--Save Button-->
+            <Button Text="Salvează" Command="{Binding CheckCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Alert" xml:space="preserve">
+    <value>Avertizare</value>
+  </data>
+  <data name="AllRightsReserved" xml:space="preserve">
+    <value>Toate drepturile rezervate</value>
+  </data>
+  <data name="BoughtFor" xml:space="preserve">
+    <value>Cumpărat la:</value>
+  </data>
+  <data name="Buy" xml:space="preserve">
+    <value>Cumpără</value>
+  </data>
+  <data name="CompanyDescription" xml:space="preserve">
+    <value>Descrierea Companiei</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirmare parolă</value>
+  </data>
+  <data name="CurrentPrice" xml:space="preserve">
+    <value>Curent:</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Ajutor</value>
+  </data>
+  <data name="InvalidEmail" xml:space="preserve">
+    <value>Vă rugăm introduceți un email valid (ex. ion@domeniu.ro)</value>
+  </data>
+  <data name="InvalidPassword" xml:space="preserve">
+    <value>Parola este invalidă. Trebuie să aibă minim 8 caractere lungime și să conțină o litera mare și un număr.</value>
+  </data>
+  <data name="JoinUs" xml:space="preserve">
+    <value>Alătură-te nouă!</value>
+  </data>
+  <data name="LetsTrade" xml:space="preserve">
+    <value>Hai să tranzacționăm!</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Conectare</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Deconectare</value>
+  </data>
+  <data name="Market" xml:space="preserve">
+    <value>Piață</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nume</value>
+  </data>
+  <data name="NoStocksFound" xml:space="preserve">
+    <value>Nicio acțiune găsită!</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Parolă</value>
+  </data>
+  <data name="PreviousPrice" xml:space="preserve">
+    <value>Anterior:</value>
+  </data>
+  <data name="PriceDiff" xml:space="preserve">
+    <value>Dif Preț:</value>
+  </data>
+  <data name="PriceDifference" xml:space="preserve">
+    <value>Diferență Preț:</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Cantitate:</value>
+  </data>
+  <data name="QuantityCheckMessage" xml:space="preserve">
+    <value>Cantitatea trebuie să fie mai mare de 0!</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Înregistrare</value>
+  </data>
+  <data name="Sell" xml:space="preserve">
+    <value>Vânzare</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>Statistici</value>
+  </data>
+  <data name="Stocks" xml:space="preserve">
+    <value>Acțiuni</value>
+  </data>
+  <data name="Owned" xml:space="preserve">
+    <value>Deținute</value>
+  </data>
+  <data name="Sign" xml:space="preserve">
+    <value>RON</value>
+  </data>
+  <data name="BudgetCheckMessage" xml:space="preserve">
+    <value>Nu sunt destui bani pentru a finaliza tranzacția!</value>
+  </data>
+  <data name="SellCheckMessage" xml:space="preserve">
+    <value>Nu puteți vinde nimic sau mai multe acțiuni de cât detineți!</value>
+  </data>
+  <data name="HelpText" xml:space="preserve">
+    <value>Tutorial video pentru limba română</value>
+  </data>
+</root>
