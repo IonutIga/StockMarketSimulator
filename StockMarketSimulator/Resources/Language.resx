@@ -213,6 +213,9 @@
   <data name="Sign" xml:space="preserve">
     <value>€</value>
   </data>
+  <data name="SMS" xml:space="preserve">
+    <value>SMS</value>
+  </data>
   <data name="Statistics" xml:space="preserve">
     <value>Statistics</value>
   </data>

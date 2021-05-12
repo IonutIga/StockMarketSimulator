@@ -14,7 +14,6 @@
             <vm:HomeViewModel x:Key="vm"/>
             <Style TargetType="Label" x:Key="labelStockStyle">
                 <Setter Property="FontSize" Value="18"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
             </Style>
         </ResourceDictionary>
 
@@ -40,28 +39,26 @@
                                     <Image Source="{Binding ImageUri}" WidthRequest="40" HeightRequest="40"/>
                                     <!--Names-->
                                     <StackLayout Orientation="Vertical"  VerticalOptions="Start" WidthRequest="100">
-                                        <Label FontSize="20" FontAttributes="Bold"  Text="{Binding ShortName}" />
-                                        <Label FontSize="14" Text="{Binding LongName}" MaxLines="1" LineBreakMode="TailTruncation"/>
+                                        <Label FontSize="20"  Text="{Binding ShortName}" />
+                                        <Label FontSize="14" TextColor="Gray" Text="{Binding LongName}" MaxLines="1" LineBreakMode="TailTruncation"/>
                                     </StackLayout>
                                     <StackLayout HorizontalOptions="EndAndExpand">
                                         <!--New Price-->
                                         <StackLayout Orientation="Horizontal">
                                             <Label Style="{StaticResource labelStockStyle}"  MaxLines="1" LineBreakMode="TailTruncation" Text="{te:Translate CurrentPrice}" />
-                                            <Label FontSize="16" Text="{Binding NowPrice}" VerticalOptions="EndAndExpand" MaxLines="1" LineBreakMode="TailTruncation"/>
-                                            <Label FontSize="16" WidthRequest="40" Text="{te:Translate Sign}" VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand"/>
+                                            <Label FontSize="16" Text="{Binding NowPrice,  StringFormat='{0:F2}'}" VerticalOptions="EndAndExpand" MaxLines="1" LineBreakMode="TailTruncation"/>
                                         </StackLayout>
                                         <!--Old Price-->
                                         <StackLayout Orientation="Horizontal">
                                             <Label Style="{StaticResource labelStockStyle}"  MaxLines="1" LineBreakMode="TailTruncation" Text="{te:Translate PreviousPrice}"/>
-                                            <Label FontSize="16" Text="{Binding OldPrice}" VerticalOptions="EndAndExpand" MaxLines="1" LineBreakMode="TailTruncation"/>
-                                            <Label FontSize="16" WidthRequest="40" Text="{te:Translate Sign}" VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand"/>
+                                            <Label FontSize="16" Text="{Binding OldPrice,  StringFormat='{0:F2}'}" VerticalOptions="EndAndExpand" MaxLines="1" LineBreakMode="TailTruncation"/>
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
                                 <!--Price Difference-->
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="{te:Translate PriceDifference}" FontSize="18" TextColor="{Binding StatisticColor}" HorizontalOptions="EndAndExpand"/>
-                                    <Label Text="{Binding Statistic}" FontSize="18" TextColor="{Binding StatisticColor}" HorizontalOptions="Start"/>
+                                    <Label Text="{Binding Statistic, StringFormat='{0:F2}'}" FontSize="18" TextColor="{Binding StatisticColor}" HorizontalOptions="Start"/>
                                     <Label FontSize="18" Text="{te:Translate Sign}" VerticalOptions="EndAndExpand" TextColor="{Binding StatisticColor}" HorizontalOptions="StartAndExpand"/>
                                 </StackLayout>
                             </StackLayout>

@@ -5,7 +5,7 @@
              x:Class="StockMarketSimulator.View.MainTabbedPage"
             xmlns:te="clr-namespace:StockMarketSimulator.Helpers"
             xmlns:vm="clr-namespace:StockMarketSimulator.ViewModel"
-            Title="{te:Translate StockMarketSimulator}"
+            Title="{te:Translate SMS}"
              android:TabbedPage.ToolbarPlacement="Bottom">
 
 
@@ -14,7 +14,7 @@
     </TabbedPage.BindingContext>
     <!--Budget-->
     <TabbedPage.ToolbarItems>
-        <ToolbarItem  Text="{Binding Budget, Mode=TwoWay, StringFormat='Cash: {0}'}"/>
+        <ToolbarItem  Text="{Binding Budget, Mode=TwoWay, StringFormat='Cash: {0:F2}'}" Command="{Binding SettingsCommand}"/>
         <ToolbarItem  Text="{te:Translate Sign}" Command="{Binding SettingsCommand}" />
     </TabbedPage.ToolbarItems>
     <!--Used for placing the toolbar at the bottom, on Android-->

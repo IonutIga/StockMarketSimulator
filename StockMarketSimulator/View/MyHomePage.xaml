@@ -16,7 +16,6 @@
             <!--Style for the Buy and Quantity labels-->
             <Style TargetType="Label" x:Key="labelStockStyle">
                 <Setter Property="FontSize" Value="18"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
             </Style>
         </ResourceDictionary>
 
@@ -42,15 +41,14 @@
                                     <Image Source="{Binding ImageUri}" WidthRequest="40" HeightRequest="40"/>
                                     <!--Names-->
                                     <StackLayout Orientation="Vertical" VerticalOptions="Start" WidthRequest="100">
-                                        <Label FontSize="20" FontAttributes="Bold"  Text="{Binding ShortName}"/>
-                                        <Label FontSize="14" Text="{Binding LongName}" MaxLines="1" LineBreakMode="TailTruncation"/>
+                                        <Label FontSize="20"  Text="{Binding ShortName}"/>
+                                        <Label FontSize="14" TextColor="Gray" Text="{Binding LongName}" MaxLines="1" LineBreakMode="TailTruncation"/>
                                     </StackLayout>
                                     <StackLayout HorizontalOptions="EndAndExpand">
                                         <!--Buy Price-->
                                         <StackLayout Orientation="Horizontal">
                                             <Label Style="{StaticResource labelStockStyle}" Text="{te:Translate BoughtFor}" MaxLines="1" LineBreakMode="TailTruncation"/>
-                                            <Label FontSize="16" Text="{Binding BuyPrice}" VerticalOptions="EndAndExpand" MaxLines="1" LineBreakMode="TailTruncation"/>
-                                            <Label WidthRequest="40" FontSize="16" Text="{te:Translate Sign}" VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand"/>
+                                            <Label FontSize="16" Text="{Binding BuyPrice,  StringFormat='{0:F2}'}" VerticalOptions="EndAndExpand" MaxLines="1" LineBreakMode="TailTruncation"/>
                                         </StackLayout>
                                         <!--Quantity-->
                                         <StackLayout Orientation="Horizontal">
@@ -63,7 +61,7 @@
                                 <!--Current Price-->
                                 <StackLayout IsVisible="{Binding IsVisible, Mode=TwoWay}" Orientation="Horizontal" >
                                     <Label HorizontalOptions="EndAndExpand" Style="{StaticResource labelStockStyle}" Text="{te:Translate CurrentPrice}"/>
-                                    <Label HorizontalOptions="Start" Style="{StaticResource labelStockStyle}" Text="{Binding Source={StaticResource vm}, Path=NowPrice}"/>
+                                    <Label HorizontalOptions="Start" Style="{StaticResource labelStockStyle}" Text="{Binding Source={StaticResource vm}, Path=NowPrice , StringFormat='{0:F2}'}"/>
                                     <Label Style="{StaticResource labelStockStyle}" Text="{te:Translate Sign}" HorizontalOptions="StartAndExpand"/>
                                 </StackLayout>
                                 <!--Quantity Entry-->

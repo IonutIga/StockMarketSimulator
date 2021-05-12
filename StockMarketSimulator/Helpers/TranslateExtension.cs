@@ -5,7 +5,7 @@ using Plugin.Multilingual;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 namespace StockMarketSimulator.Helpers
-
+    // This class was created using a tutorial, it is NOT my work 
 {
     [ContentProperty("Text")]
     // Class used to enable internationalization

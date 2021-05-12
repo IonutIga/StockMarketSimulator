@@ -19,7 +19,7 @@
     <value>Toate drepturile rezervate</value>
   </data>
   <data name="BoughtFor" xml:space="preserve">
-    <value>Cumpărat la:</value>
+    <value>Cumpărat:</value>
   </data>
   <data name="Buy" xml:space="preserve">
     <value>Cumpără</value>
@@ -34,7 +34,7 @@
     <value>Curent:</value>
   </data>
   <data name="Email" xml:space="preserve">
-    <value>E-mail</value>
+    <value>Email</value>
   </data>
   <data name="Help" xml:space="preserve">
     <value>Ajutor</value>
@@ -91,7 +91,7 @@
     <value>Înregistrare</value>
   </data>
   <data name="Sell" xml:space="preserve">
-    <value>Vânzare</value>
+    <value>Vinde</value>
   </data>
   <data name="Statistics" xml:space="preserve">
     <value>Statistici</value>

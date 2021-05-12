@@ -16,7 +16,7 @@
         </trans-unit>
         <trans-unit id="BoughtFor" translate="yes" xml:space="preserve">
           <source>Bought for:</source>
-          <target state="translated">Cumpărat la:</target>
+          <target state="translated">Cumpărat:</target>
         </trans-unit>
         <trans-unit id="Buy" translate="yes" xml:space="preserve">
           <source>Buy</source>
@@ -37,7 +37,7 @@
         </trans-unit>
         <trans-unit id="Email" translate="yes" xml:space="preserve">
           <source>Email</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">E-mail</target>
+          <target state="translated">Email</target>
         </trans-unit>
         <trans-unit id="Help" translate="yes" xml:space="preserve">
           <source>Help</source>
@@ -114,7 +114,7 @@
         </trans-unit>
         <trans-unit id="Sell" translate="yes" xml:space="preserve">
           <source>Sell</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Vânzare</target>
+          <target state="translated">Vinde</target>
         </trans-unit>
         <trans-unit id="Statistics" translate="yes" xml:space="preserve">
           <source>Statistics</source>
@@ -147,6 +147,10 @@
         <trans-unit id="HelpText" translate="yes" xml:space="preserve">
           <source>Video tutorial for English language</source>
           <target state="translated">Tutorial video pentru limba română</target>
+        </trans-unit>
+        <trans-unit id="SMS" translate="yes" xml:space="preserve">
+          <source>SMS</source>
+          <target state="new">SMS</target>
         </trans-unit>
       </group>
     </body>

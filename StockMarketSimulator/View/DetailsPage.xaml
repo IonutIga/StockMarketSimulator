@@ -34,7 +34,7 @@
                     <!--Names-->
                     <StackLayout Orientation="Vertical">
                         <Label FontSize="26" FontAttributes="Bold"  Text="{Binding ShortName}"/>
-                        <Label FontSize="20" Text="{Binding LongName}"/>
+                        <Label FontSize="20" TextColor="Gray" Text="{Binding LongName}"/>
                     </StackLayout>
                 </StackLayout>
                 <!--Prices-->
@@ -51,7 +51,7 @@
                     <Frame  Grid.Row="0" Grid.Column="0" Padding="8,8,8,16">
                         <StackLayout Orientation="Vertical" >
                             <Label Style="{StaticResource labelStockStyle}" HorizontalOptions="CenterAndExpand"  Text="{te:Translate CurrentPrice}"/>
-                            <Label FontSize="18" Text="{Binding NowPrice}" HorizontalOptions="CenterAndExpand" MaxLines="1" LineBreakMode="TailTruncation"/>
+                            <Label FontSize="18" Text="{Binding NowPrice, StringFormat='{0:F2}'}" HorizontalOptions="CenterAndExpand" MaxLines="1" LineBreakMode="TailTruncation"/>
                             <Label FontSize="18" Text="{te:Translate Sign}" HorizontalOptions="CenterAndExpand"/>
                         </StackLayout>
                     </Frame>
@@ -59,15 +59,15 @@
                     <Frame Grid.Row="0" Grid.Column="1" Padding="8,8,8,16">
                         <StackLayout  Orientation="Vertical">
                             <Label Style="{StaticResource labelStockStyle}" HorizontalOptions="CenterAndExpand" Text="{te:Translate PreviousPrice}"/>
-                            <Label FontSize="18" Text="{Binding OldPrice}"  HorizontalOptions="CenterAndExpand" MaxLines="1" LineBreakMode="TailTruncation"/>
+                            <Label FontSize="18" Text="{Binding OldPrice, StringFormat='{0:F2}'}"  HorizontalOptions="CenterAndExpand" MaxLines="1" LineBreakMode="TailTruncation"/>
                             <Label FontSize="18" Text="{te:Translate Sign}" HorizontalOptions="CenterAndExpand"/>
                         </StackLayout>
                     </Frame>
                     <!--Price Difference-->
                     <Frame Grid.Row="0" Grid.Column="2" Padding="8,8,8,16" >
                         <StackLayout Orientation="Vertical" >
-                            <Label Text="{te:Translate PriceDiff}" HorizontalOptions="CenterAndExpand" FontSize="18" TextColor="{Binding StatisticColor}"/>
-                            <Label Text="{Binding Statistic}" FontSize="18" HorizontalOptions="CenterAndExpand" TextColor="{Binding StatisticColor}" MaxLines="1" LineBreakMode="TailTruncation" />
+                            <Label Style="{StaticResource labelStockStyle}" Text="{te:Translate PriceDiff}" HorizontalOptions="CenterAndExpand" FontSize="18" TextColor="{Binding StatisticColor}"/>
+                            <Label Text="{Binding Statistic, StringFormat='{0:F2}'}" FontSize="18" HorizontalOptions="CenterAndExpand" TextColor="{Binding StatisticColor}" MaxLines="1" LineBreakMode="TailTruncation" />
                             <Label FontSize="18" Text="{te:Translate Sign}" TextColor="{Binding StatisticColor}" HorizontalOptions="CenterAndExpand"/>
                         </StackLayout>
                     </Frame>
