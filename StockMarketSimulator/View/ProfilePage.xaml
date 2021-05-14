@@ -50,7 +50,7 @@
                 <!--Statistics-->
                 <Label Style="{StaticResource TitleLabel}" Text="{te:Translate Statistics}"/>
                 <!--Chart-->
-                <microcharts:ChartView HeightRequest="300"  x:Name="chartView" Chart="{Binding StocksOwnedChart}"/>
+                <microcharts:ChartView HeightRequest="280"  x:Name="chartView" Chart="{Binding StocksOwnedChart}"/>
                 <!--Logout Button-->
                 <Button Margin="0,8,0,0" Text="{te:Translate Logout}" Command="{Binding LogoutCommand}"/>
             </StackLayout>

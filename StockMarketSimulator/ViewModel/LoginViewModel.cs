@@ -40,6 +40,20 @@ namespace StockMarketSimulator.ViewModel
             }
         }
 
+        private bool isLoading = false;
+        public bool IsLoading
+        {
+            get
+            {
+                return isLoading;
+            }
+            set
+            {
+                isLoading = value;
+                OnPropertyChanged("IsLoading");
+            }
+        }
+
         // Property used to check if all the entries were filled in and to enable auto call of LoginCanExecute method
         public bool CanLogin
         {
@@ -69,16 +83,19 @@ namespace StockMarketSimulator.ViewModel
          */
         private async void Login(object arg)
         {
+           
             if (CanLogin)
                 try
                 {
+                    IsLoading = true;
                     await Auth.auth.LoginUser(Email, Password);
                     await App.Current.MainPage.Navigation.PushAsync(new MainTabbedPage());
+                    IsLoading = false;
                 }
                 catch (Exception e)
                 {
-                    await App.Current.MainPage.DisplayAlert("Error", e.Message, "Ok");
-
+                    IsLoading = false;
+                    await App.Current.MainPage.DisplayAlert("Error", e.Message, "Ok");             
                 }
 
 

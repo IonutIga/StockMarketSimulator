@@ -66,11 +66,22 @@ namespace StockMarketSimulator.ViewModel
                 OnPropertyChanged("CanRegister");
             }
         }
-        public string PasswordText;
 
+        private bool isLoading = false;
+        public bool IsLoading
+        {
+            get
+            {
+                return isLoading;
+            }
+            set
+            {
+                isLoading = value;
+                OnPropertyChanged("IsLoading");
+            }
+        }
 
-
-       // Property used to check if all the entries were filled in and to enable auto call of RegisterCanExecute method
+        // Property used to check if all the entries were filled in and to enable auto call of RegisterCanExecute method
         public bool CanRegister
         {
             get
@@ -102,13 +113,15 @@ namespace StockMarketSimulator.ViewModel
             if (CanRegister)
             try
             {
+                IsLoading = true;
                 await Auth.auth.RegisterUser(Name.Trim(), Email.Trim(), Password);
                 await App.Current.MainPage.Navigation.PushAsync(new MainTabbedPage());
+                IsLoading = false;
             }
             catch (Exception e)
             {
-                await App.Current.MainPage.DisplayAlert("Error", e.Message, "Ok");
-
+                    IsLoading = false;
+                    await App.Current.MainPage.DisplayAlert("Error", e.Message, "Ok");
             }
         }
 
