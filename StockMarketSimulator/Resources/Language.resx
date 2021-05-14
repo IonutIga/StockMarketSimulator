@@ -150,8 +150,14 @@
   <data name="HelpText" xml:space="preserve">
     <value>Video tutorial for English language</value>
   </data>
+  <data name="InvalidConfirmPassword" xml:space="preserve">
+    <value>Passwords don't match!</value>
+  </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Please insert a valid email (ex. john@domain.com)</value>
+  </data>
+  <data name="InvalidName" xml:space="preserve">
+    <value>Please insert a name!</value>
   </data>
   <data name="InvalidPassword" xml:space="preserve">
     <value>Your password is invalid. It must be minimum 8 characters length, containing an upper letter and a number.</value>

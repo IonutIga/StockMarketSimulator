@@ -28,7 +28,13 @@
                         </StackLayout.Behaviors>
                     </StackLayout>
                     <!--Password-->
-                    <Entry Placeholder="{te:Translate Password}" IsPassword="True" Text="{Binding Password, Mode=TwoWay}"/>
+                    <StackLayout>
+                        <Entry Placeholder="{te:Translate Password}" IsPassword="True" Text="{Binding Password, Mode=TwoWay}"/>
+                        <Label IsVisible="false"/>
+                        <StackLayout.Behaviors>
+                            <behavior:PasswordEntryBehavior/>
+                        </StackLayout.Behaviors>
+                    </StackLayout>
                     <!--Login Button-->
                     <Button Margin="0,16" Text="{te:Translate Login}" Command="{Binding LoginCommand}" CommandParameter="{Binding CanLogin}"/>
                 </StackLayout>

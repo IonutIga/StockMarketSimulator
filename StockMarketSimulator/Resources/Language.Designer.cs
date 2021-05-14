@@ -236,5 +236,25 @@ namespace StockMarketSimulator.Resources {
                 return ResourceManager.GetString("SellCheckMessage", resourceCulture);
             }
         }
+        /// <summary>
+        ///   Looks up a localized string similar to Passwords don't match!.
+        /// </summary>
+        internal static string InvalidConfirmPassword
+        {
+            get
+            {
+                return ResourceManager.GetString("InvalidConfirmPassword", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to Please insert a name!.
+        /// </summary>
+        internal static string InvalidName
+        {
+            get
+            {
+                return ResourceManager.GetString("InvalidName", resourceCulture);
+            }
+        }
     }
 }

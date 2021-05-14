@@ -114,4 +114,10 @@
   <data name="HelpText" xml:space="preserve">
     <value>Tutorial video pentru limba română</value>
   </data>
+  <data name="InvalidConfirmPassword" xml:space="preserve">
+    <value>Parolele nu coincid!</value>
+  </data>
+  <data name="InvalidName" xml:space="preserve">
+    <value>Vă rugăm introduceți un nume!</value>
+  </data>
 </root>

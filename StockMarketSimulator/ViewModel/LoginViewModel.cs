@@ -45,9 +45,7 @@ namespace StockMarketSimulator.ViewModel
         {
             get
             {
-                if (!string.IsNullOrEmpty(Password) && !string.IsNullOrEmpty(Email))
-                    return true;
-                return false;
+                return (Helpers.EmailEntryBehavior.isEmailValid && Helpers.PasswordEntryBehavior.isPasswordValid);
             }
         }
 
@@ -59,19 +57,9 @@ namespace StockMarketSimulator.ViewModel
         public LoginViewModel()
         {
 
-            LoginCommand = new Command(Login, LoginCanExecute);
+            LoginCommand = new Command(Login);
         }
-
-        /*
-         * Method used to enable login
-         * 
-         * @arg
-         *  argument
-         */
-        private bool LoginCanExecute(object arg)
-        {
-            return CanLogin;
-        }
+       
 
         /*
          * Method used to login the user with introduced credentials; created for LoginCommand
@@ -81,16 +69,17 @@ namespace StockMarketSimulator.ViewModel
          */
         private async void Login(object arg)
         {
-            try
-            {
-                await Auth.auth.LoginUser(Email, Password);
-                await App.Current.MainPage.Navigation.PushAsync(new MainTabbedPage());
-            }
-            catch (Exception e)
-            {
-                await App.Current.MainPage.DisplayAlert("Error", e.Message, "Ok");
+            if (CanLogin)
+                try
+                {
+                    await Auth.auth.LoginUser(Email, Password);
+                    await App.Current.MainPage.Navigation.PushAsync(new MainTabbedPage());
+                }
+                catch (Exception e)
+                {
+                    await App.Current.MainPage.DisplayAlert("Error", e.Message, "Ok");
 
-            }
+                }
 
 
         }

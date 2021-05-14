@@ -66,16 +66,17 @@ namespace StockMarketSimulator.ViewModel
                 OnPropertyChanged("CanRegister");
             }
         }
+        public string PasswordText;
 
-        // Property used to check if all the entries were filled in and to enable auto call of RegisterCanExecute method
+
+
+       // Property used to check if all the entries were filled in and to enable auto call of RegisterCanExecute method
         public bool CanRegister
         {
             get
             {
-                if (!string.IsNullOrEmpty(Password) && !string.IsNullOrEmpty(ConfirmedPassword) && !string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Name))
-                    if (Password.Equals(ConfirmedPassword))
-                        return true;
-                return false;
+
+                return Helpers.NameEntryBehavior.isNameValid && Helpers.EmailEntryBehavior.isEmailValid && Helpers.PasswordEntryBehavior.isPasswordValid && Helpers.ConfirmPasswordEntryBehavior.isConfirmPasswordValid;
             }
         }
 
@@ -86,19 +87,9 @@ namespace StockMarketSimulator.ViewModel
         public RegisterViewModel()
         {
 
-            RegisterCommand = new Command(Register, RegisterCanExecute);
+            RegisterCommand = new Command(Register);
         }
 
-        /*
-         * Method used to enable register
-         * 
-         * @arg
-         *  argument
-         */
-        private bool RegisterCanExecute(object arg)
-        {
-            return CanRegister;
-        }
 
         /*
         * Method used to register the user with introduced credentials; created for RegisterCommand
@@ -108,9 +99,10 @@ namespace StockMarketSimulator.ViewModel
         */
         private async void Register(object arg)
         {
+            if (CanRegister)
             try
             {
-                await Auth.auth.RegisterUser(Name, Email, Password);
+                await Auth.auth.RegisterUser(Name.Trim(), Email.Trim(), Password);
                 await App.Current.MainPage.Navigation.PushAsync(new MainTabbedPage());
             }
             catch (Exception e)

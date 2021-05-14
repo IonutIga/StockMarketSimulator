@@ -152,6 +152,14 @@
           <source>SMS</source>
           <target state="new">SMS</target>
         </trans-unit>
+        <trans-unit id="InvalidConfirmPassword" translate="yes" xml:space="preserve">
+          <source>Passwords don't match!</source>
+          <target state="translated">Parolele nu coincid!</target>
+        </trans-unit>
+        <trans-unit id="InvalidName" translate="yes" xml:space="preserve">
+          <source>Please insert a name!</source>
+          <target state="translated">Vă rugăm introduceți un nume!</target>
+        </trans-unit>
       </group>
     </body>
   </file>

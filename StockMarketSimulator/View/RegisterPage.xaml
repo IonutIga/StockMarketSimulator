@@ -20,7 +20,13 @@
                 <!--Form-->
                 <StackLayout VerticalOptions="CenterAndExpand" BindingContext="{StaticResource vm}">
                     <!--Name-->
+                    <StackLayout>
                     <Entry Placeholder="{te:Translate Name}" Text="{Binding Name, Mode=TwoWay}"/>
+                        <Label IsVisible="false"/>
+                        <StackLayout.Behaviors>
+                            <behavior:NameEntryBehavior/>
+                        </StackLayout.Behaviors>
+                    </StackLayout>
                     <StackLayout>
                         <!--Email-->
                         <Entry Placeholder="{te:Translate Email}" Text="{Binding Email, Mode=TwoWay}"/>
@@ -32,13 +38,19 @@
                     <!--Password-->
                     <StackLayout>
                         <Entry Placeholder="{te:Translate Password}" IsPassword="True" Text="{Binding Password, Mode=TwoWay}"/>
-                        <Label IsVisible="false"/>
+                        <Label IsVisible="false" Text="{Binding PasswordText}"/>
                         <StackLayout.Behaviors>
                             <behavior:PasswordEntryBehavior/>
                         </StackLayout.Behaviors>
                     </StackLayout>
                     <!--Confirmed Password-->
-                    <Entry Placeholder="{te:Translate ConfirmPassword}" IsPassword="True" Text="{Binding ConfirmedPassword, Mode=TwoWay}"/>
+                    <StackLayout>
+                        <Entry Placeholder="{te:Translate ConfirmPassword}" IsPassword="True" Text="{Binding ConfirmedPassword, Mode=TwoWay}"/>
+                        <Label IsVisible="false"/>
+                        <StackLayout.Behaviors>
+                            <behavior:ConfirmPasswordEntryBehavior/>
+                        </StackLayout.Behaviors>
+                    </StackLayout>
                     <!--Register Button-->
                     <Button Margin="0,16" Text="{te:Translate Register}" Command="{Binding RegisterCommand}" CommandParameter="{Binding CanRegister}"/>
                 </StackLayout>
