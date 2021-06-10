@@ -95,7 +95,6 @@ namespace StockMarketSimulator.ViewModel
                 chartEntry.ValueLabel = statistic.Value.ToString();
                 chartEntry.Label = statistic.Key;
                 chartEntry.Color = SkiaSharp.SKColor.FromHsv(random.Next(0, 361), random.Next(0, 101), random.Next(0, 101));
-
                 chartEntries.Add(chartEntry);
             }
 

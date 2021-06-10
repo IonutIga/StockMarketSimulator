@@ -5,6 +5,7 @@ using Xamarin.Forms.Xaml;
 
 namespace StockMarketSimulator.Helpers
 {
+    // This class was created using a tutorial, it is NOT my work 
     // To add images, add the image in the images folder and set the action, in properties, to embedded image
     // To make sure the content is a source type
     [ContentProperty(nameof(Source))]

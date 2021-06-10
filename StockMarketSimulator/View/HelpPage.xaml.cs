@@ -23,9 +23,9 @@ namespace StockMarketSimulator.View
         {
 
             if (!CrossMultilingual.Current.CurrentCultureInfo.TwoLetterISOLanguageName.Equals("ro"))
-                await CrossMediaManager.Current.Play("https://firebasestorage.googleapis.com/v0/b/stockmarketsimulator-17d7d.appspot.com/o/EnTutorial.mp4?alt=media&token=06f3f993-72a2-46f5-8ca1-f7fa9220abd6");
+                await CrossMediaManager.Current.Play("https://firebasestorage.googleapis.com/v0/b/stockmarketsimulator-17d7d.appspot.com/o/XamarinEnFinal.mp4?alt=media&token=aab31b19-4438-4550-bc9b-fae277863fe0");
             else
-                await CrossMediaManager.Current.Play("https://firebasestorage.googleapis.com/v0/b/stockmarketsimulator-17d7d.appspot.com/o/RoTutorial.mp4?alt=media&token=b9916f2e-d48e-48fe-ab95-07af987eada2");
+                await CrossMediaManager.Current.Play("https://firebasestorage.googleapis.com/v0/b/stockmarketsimulator-17d7d.appspot.com/o/XamarinRoFinal.mp4?alt=media&token=20fa3f8d-a1de-464a-be89-1fff773c7b74");
             vm.IsLoading = false;
         }
     }

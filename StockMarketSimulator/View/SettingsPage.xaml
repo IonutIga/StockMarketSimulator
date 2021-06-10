@@ -19,7 +19,7 @@
             <!--Loading Screen when settings are set-->
             <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}"/>
             <!--Rate-->
-            <Slider Maximum="6" Minimum="1" MinimumTrackColor="Black" MaximumTrackColor="Gray" Value="{Binding Rate}"/>
+            <Slider Maximum="10" Minimum="1" MinimumTrackColor="Black" MaximumTrackColor="Gray" Value="{Binding Rate}"/>
             <Label FontSize="18" Text="{Binding Rate,StringFormat='Rata actuală de conversie EUR-RON: {0}'}"/>
             <!--Save Button-->
             <Button Text="Salvează" Command="{Binding CheckCommand}"/>

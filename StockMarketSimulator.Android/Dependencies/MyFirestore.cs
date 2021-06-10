@@ -80,9 +80,11 @@ namespace StockMarketSimulator.Droid.Dependencies
                     { "shortname", mystock.ShortName},
                     { "longname", mystock.LongName },
                     { "quantity", quantity},
+                    // has Uri: in front of the actual Uri
                     { "imageuri", mystock.ImageUri.ToString().Remove(0,5) },
                     {"ronrate", (double)App.Current.Properties["rate"] },
-                    {"buyprice", Math.Round(CrossMultilingual.Current.CurrentCultureInfo.TwoLetterISOLanguageName.Equals("ro") ? mystock.NowPrice /  (double)App.Current.Properties["rate"] : mystock.NowPrice ,2) }
+                    {"buyprice", Math.Round(CrossMultilingual.Current.CurrentCultureInfo.TwoLetterISOLanguageName.Equals("ro") ?
+                    mystock.NowPrice /  (double)App.Current.Properties["rate"] : mystock.NowPrice ,2) }
                 };
                 collection.Add(stock);
                 return true;
@@ -203,9 +205,9 @@ namespace StockMarketSimulator.Droid.Dependencies
             var collection = Firebase.Firestore.FirebaseFirestore.Instance.Collection("mystocks");
             Query query;
             if (CrossMultilingual.Current.CurrentCultureInfo.TwoLetterISOLanguageName.Equals("ro"))
-                query = collection.WhereEqualTo("userid", UserId).WhereEqualTo("shortname", mystock.ShortName).WhereEqualTo("buyprice", CrossMultilingual.Current.CurrentCultureInfo.TwoLetterISOLanguageName.Equals("ro") ? mystock.NowPrice / (double)App.Current.Properties["rate"] : mystock.NowPrice).WhereEqualTo("ronrate", (double)App.Current.Properties["rate"]);
+                query = collection.WhereEqualTo("userid", UserId).WhereEqualTo("shortname", mystock.ShortName).WhereEqualTo("buyprice", mystock.NowPrice / (double)App.Current.Properties["rate"]).WhereEqualTo("ronrate", (double)App.Current.Properties["rate"]);
             else
-                query = collection.WhereEqualTo("userid", UserId).WhereEqualTo("shortname", mystock.ShortName).WhereEqualTo("buyprice", CrossMultilingual.Current.CurrentCultureInfo.TwoLetterISOLanguageName.Equals("ro") ? mystock.NowPrice / (double)App.Current.Properties["rate"] : mystock.NowPrice);
+                query = collection.WhereEqualTo("userid", UserId).WhereEqualTo("shortname", mystock.ShortName).WhereEqualTo("buyprice", mystock.NowPrice);
             query.Get().AddOnCompleteListener(this);
 
             // Giving time to the request to be handled
