@@ -213,7 +213,7 @@ namespace StockMarketSimulator.Droid.Dependencies
             // Giving time to the request to be handled
             for (var i = 0; i < 25; i++)
             {
-                await System.Threading.Tasks.Task.Delay(100);
+                await System.Threading.Tasks.Task.Delay(300);
                 if (hasFoundDoc)
                     break;
             }
